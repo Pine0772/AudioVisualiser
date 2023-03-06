@@ -13,6 +13,9 @@ import os
 import random
 import sys
 
+def hex2rgb(h):
+    h=h.replace("#","")
+    return (int(h[0:2],16),int(h[2:4],16),int(h[4:6],16))
 
 #sd.default.device = 'pulse' # Device to use, Comment for default
 fs=44000 # Sample rate
@@ -32,7 +35,7 @@ duration = 1/30  # Duration of each FFT sample
 
 #boxchars = ["●","●"] # LED style 1
 #boxchars = ["○","◒","●"] # LED style 2
-midchars = "▁"
+midchars = ""
 boxchars = [" ","▁","▂","▃","▄","▅","▆","▇","█"] # Bar style
 #boxchars = [" ","│"]
 '''
@@ -50,8 +53,8 @@ boxchars = [[" "],
 
 
 MonoChannel=2 # Which channel to use? Left 1, Avg 2, Right 3
-monoMode=False # 1 Mono Bar?
-includeAvg = True; # 3 Bar stereo
+monoMode=True # 1 Mono Bar?
+includeAvg = False; # 3 Bar stereo
 boost=5 # Boosts volume linearly.
 width = 1 # Width of each bar, for mono mode
 widthalt = 1 # Width of each bar element, width = widthalt * 3
@@ -102,9 +105,6 @@ min_dB=15 # The low end of the volume scale to show
 
 
 
-def hex2rgb(h):
-    h=h.replace("#","")
-    return (int(h[0:2],16),int(h[2:4],16),int(h[4:6],16))
 
 run = True
 dataR=[]
@@ -112,8 +112,8 @@ dataL=[]
 plt.style.use('ggplot')
 myrecording= np.ndarray((2,int(2)))
 
-channels = 0
-rows = 0
+channels = 5
+rows = 5
 # ^ Defined during runtime
 
 
