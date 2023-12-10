@@ -1,0 +1,68 @@
+
+
+
+
+midchars = " "
+#boxchars = [" ","▁","▂","▃","▄","▅","▆","▇","█"]
+boxchars = [" ","▁","▂","▃","▄","▅","▆","▇"]
+#boxchars = [" ","│"]
+#boxchars = ["  ",["🤣 ","🙏 ","👁 ","👍 ","💪 ","⚠ "]]
+
+#boxchars = [[" "],[" ","."],[".",","],[",",":"],[":","+"],["+","#"],["#","@"]]
+
+boxchars = ["●","●"]
+
+boxchars = ["○","●"]
+
+
+
+channels = 10
+rows = 15
+run = True
+MonoChannel=2 # Left 1, Avg 2, Right 3
+monoMode=True
+includeAvg = False;
+boost=10
+width = 1 # Width of each bar, for mono mode
+widthalt = 1 # Width of each bar element, width = widthalt * 3
+avgMode=True
+nobox = True # Removes boxes and frequency bars
+smoothness=4
+colourmode = 3 # Which colouring style to use?
+forceforec = True#Foreground colouring
+forcebackc = False#Background colouring
+colourfore=hex2rgb("#cfd7f7")
+colourback=hex2rgb("#144afc")
+colour1=hex2rgb("#00ff00")#M2: solid, M4: bottom, M5: top right
+colour2=hex2rgb("#004000")#           M4: top,    M5: top left
+colour3=hex2rgb("#50ff50")#                       M5: bottom right
+colour4=hex2rgb("#104010")#                       M5: bottom left  
+hsv1=(0.5,1,255)#1,1,255 
+hsv2=(0.2,1,255)#1,1,255
+hueshift=1
+# Decimal thresholds for where the volume effects should take effect
+volLnC =1# Linear (ax) Multiplier (a) for volume curve
+volExC =5# Exponential (ax**n) multiplier (a) for volume curve
+volExI =3# Exponential (ax**n) index (n) for volume curve
+#M6: Top High
+#M6: Top Low
+#M6: Bottom High
+#M6: Bottom Low
+
+
+#Colourmode Table
+#0 None/Foreground
+#1 Green/Yellow/Red Level Indicator
+#2 Solid Colour
+#3 G/Y/R /w dark off (LED style)
+#4 Vertical Gradient
+#5 Horizontally defined Vertical Gradient
+#6 4/VG volume dependant
+#7 Hue Shift Volume Dependant
+padding = 1 # padding each side
+upperLimit=5000
+lowerLimit=100
+startComp=1000 # Start Compenstation, prevents large bins low down, 
+                    #    defines the starting frequency rate increase
+min_dB=20
+
